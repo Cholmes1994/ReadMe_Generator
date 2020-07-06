@@ -2,6 +2,8 @@
 const fs = require("fs");
 // Require inquirer
 const inquirer = require("inquirer");
+// Require Markdown file
+const generateMarkdown = require("./utils/generateMarkdown")
 // array of questions for user
 const questions = [
     {
@@ -70,75 +72,17 @@ const questions = [
 
 ];
 
-inquirer.prompt(questions).then(response => {
-    
-    fs.appendFileSync("READMEdemo.md", ("#" + Response.title) + "\n", function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Good!");
-    });
-    fs.appendFileSync("READMEdemo.md", ("#" + Response.description) + "\n", function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Good!");
-    });
-    fs.appendFileSync("READMEdemo.md", ("#" + Response.installation) + "\n", function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Good!");
-    });
-    fs.appendFileSync("READMEdemo.md", ("#" + Response.usage) + "\n", function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Good!");
-    });
-    fs.appendFileSync("READMEdemo.md", ("#" + Response.credits) + "\n", function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Good!");
-    });
-    fs.appendFileSync("READMEdemo.md", ("#" + Response.license) + "\n", function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Good!");
-    });
-    fs.appendFileSync("READMEdemo.md", ("#" + Response.contributions) + "\n", function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Good!");
-    });
-    fs.appendFileSync("READMEdemo.md", ("#" + Response.tests) + "\n", function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Good!");
-    });
-    fs.appendFileSync("READMEdemo.md", ("#" + Response.author) + "\n", function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Good!");
-    });
+//Function that writes the readme file.
+inquirer.prompt(questions)
+    .then(function (data) {
 
-});
+        fs.writeFile("READMEdemo.md", generateMarkdown(data), function (err) {
 
-// // function to write README file
-// // function writeToFile(fileName, data) {
+            if (err) {
+                return console.log(err);
+            }
 
+            console.log("Good!");
 
-//     }
-
-// // function to initialize program
-// // function init() {
-
-//     }
-
-// // function call to initialize program
-// // init();
+        });
+    });;
