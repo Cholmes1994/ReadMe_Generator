@@ -9,7 +9,7 @@ const questions = [
     {
         type: "input",
         name: "title",
-        message: "What is the tite of your project?"
+        message: "What is the title of your project?"
     },
     {
         type: "input",
@@ -76,13 +76,13 @@ const questions = [
 inquirer.prompt(questions)
     .then(function (data) {
 
-        fs.writeFile("READMEdemo.md", generateMarkdown(data), function (err) {
+        fs.writeFile("demo.md", generateMarkdown(data), function (err) {
 
             if (err) {
                 return console.log(err);
             }
 
-            console.log("Good!");
+            console.log("Complete!");
 
         });
     });;

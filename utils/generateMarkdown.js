@@ -45,7 +45,7 @@ function generateMarkdown(answers) {
 
   ## Authors
 
-  ${answers.authors}
+  ${answers.author}
 
   ## Questions
 
