@@ -50,4 +50,6 @@
     
     Or visit my Github: https://github.com/Cholmes1994
 
+# Screenshot
 
+https://raw.githubusercontent.com/Cholmes1994/ReadMe_Generator/master/utils/images/screenshot.png
