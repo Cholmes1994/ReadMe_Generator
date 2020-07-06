@@ -31,7 +31,7 @@ const questions = [
     },
     {
         type: "checkbox",
-        name: "licenses",
+        name: "license",
         message: "Choose a license. If you need help choosing a license, use https://choosealicense.com/",
         choices: [
             "MIT",
@@ -39,7 +39,7 @@ const questions = [
             "GPL",
             "Boost",
             "MPL",
-            "Public Domain (Unlicensed"
+            "Public Domain (Unlicensed)"
         ]
     },
     {
@@ -66,18 +66,79 @@ const questions = [
         type: "input",
         name: "email",
         message: "Enter email address here."
-    }
+    },
 
 ];
 
-// function to write README file
-function writeToFile(fileName, data) {
-}
+inquirer.prompt(questions).then(response => {
+    
+    fs.appendFileSync("READMEdemo.md", ("#" + Response.title) + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Good!");
+    });
+    fs.appendFileSync("READMEdemo.md", ("#" + Response.description) + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Good!");
+    });
+    fs.appendFileSync("READMEdemo.md", ("#" + Response.installation) + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Good!");
+    });
+    fs.appendFileSync("READMEdemo.md", ("#" + Response.usage) + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Good!");
+    });
+    fs.appendFileSync("READMEdemo.md", ("#" + Response.credits) + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Good!");
+    });
+    fs.appendFileSync("READMEdemo.md", ("#" + Response.license) + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Good!");
+    });
+    fs.appendFileSync("READMEdemo.md", ("#" + Response.contributions) + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Good!");
+    });
+    fs.appendFileSync("READMEdemo.md", ("#" + Response.tests) + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Good!");
+    });
+    fs.appendFileSync("READMEdemo.md", ("#" + Response.author) + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Good!");
+    });
 
-// function to initialize program
-function init() {
+});
 
-}
+// // function to write README file
+// // function writeToFile(fileName, data) {
 
-// function call to initialize program
-init();
+
+//     }
+
+// // function to initialize program
+// // function init() {
+
+//     }
+
+// // function call to initialize program
+// // init();
